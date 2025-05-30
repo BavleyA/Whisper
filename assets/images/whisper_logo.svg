@@ -1,0 +1,47 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bubbleGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="accentGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Main chat bubble -->
+  <path d="M50 60 Q50 40 70 40 L130 40 Q150 40 150 60 L150 90 Q150 110 130 110 L85 110 L70 125 L70 110 Q50 110 50 90 Z" 
+        fill="url(#bubbleGradient)" 
+        opacity="0.9"/>
+  
+  <!-- Secondary chat bubble -->
+  <path d="M80 100 Q80 85 95 85 L140 85 Q155 85 155 100 L155 125 Q155 140 140 140 L110 140 L95 155 L95 140 Q80 140 80 125 Z" 
+        fill="url(#accentGradient)" 
+        opacity="0.8"/>
+  
+  <!-- Whisper dots indicating quiet communication -->
+  <circle cx="90" cy="75" r="3" fill="white" opacity="0.8"/>
+  <circle cx="100" cy="75" r="3" fill="white" opacity="0.6"/>
+  <circle cx="110" cy="75" r="3" fill="white" opacity="0.4"/>
+  
+  <!-- Subtle sound waves -->
+  <path d="M165 75 Q175 70 175 75 Q175 80 165 75" 
+        stroke="url(#bubbleGradient)" 
+        stroke-width="2" 
+        fill="none" 
+        opacity="0.6"/>
+  <path d="M170 75 Q185 65 185 75 Q185 85 170 75" 
+        stroke="url(#bubbleGradient)" 
+        stroke-width="2" 
+        fill="none" 
+        opacity="0.4"/>
+  
+  <!-- App name -->
+  <text x="100" y="180" 
+        font-family="Arial, sans-serif" 
+        font-size="18" 
+        font-weight="600" 
+        text-anchor="middle" 
+        fill="url(#bubbleGradient)">Whisper</text>
+</svg>
