@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:whisper_app/home/chat_screen.dart';
+import 'package:whisper_app/home/contacts_screen.dart';
+import 'package:whisper_app/home/group_screen.dart';
+import 'package:whisper_app/home/settings_screen.dart';
 
 class Layout extends StatefulWidget {
   const Layout({super.key});
@@ -17,7 +21,6 @@ class _LayoutState extends State<Layout> {
   Widget build(BuildContext context) {
 
     return Scaffold(
-      appBar: AppBar(),
       body: PageView(
         controller: pageController,
         onPageChanged: (value) {
@@ -25,19 +28,12 @@ class _LayoutState extends State<Layout> {
             currentIndex = value;
           });
         },
-        children: [
-          Container(
-            color: Colors.red,
-          ),
-          Container(
-            color: Colors.white,
-          ),
-          Container(
-            color: Colors.black,
-          ),
-          Container(
-            color: Colors.yellow,
-          ),
+        children: const [
+          ChatScreen(),
+          GroupScreen(),
+          ContactsScreen(),
+          SettingsScreen(),
+
         ],
       ),
       bottomNavigationBar: NavigationBar(
