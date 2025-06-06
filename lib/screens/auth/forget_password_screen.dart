@@ -35,6 +35,7 @@ class _ForgetPasswordScreenState extends State<ForgetPasswordScreen> {
               ),
               const SizedBox(height: 20,),
               CustomTextField(
+                validateMessage: "Please Enter Your Email",
                 label: "Email",
                 iconData: Iconsax.direct,
                 controller: emailController,),

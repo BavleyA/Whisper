@@ -41,6 +41,7 @@ class _ProfileSetUpScreenState extends State<ProfileSetUpScreen> {
               ),
               const SizedBox(height: 20,),
               CustomTextField(
+                validateMessage: "Please Enter Your Name",
                 label: "Enter Your Name",
                 iconData: Iconsax.user,
                 controller: emailController,),

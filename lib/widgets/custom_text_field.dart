@@ -7,12 +7,14 @@ class CustomTextField extends StatefulWidget {
   late IconButton? suffixIcon;
   final TextEditingController controller;
   final bool isPassword;
+  final String validateMessage;
   CustomTextField({super.key,
     required this.label,
     required this.iconData,
     this.suffixIcon,
     required this.controller,
     this.isPassword= false,
+    required this.validateMessage,
   });
 
   @override
@@ -24,6 +26,12 @@ class _CustomTextFieldState extends State<CustomTextField> {
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+      validator: (widget.validateMessage.isEmpty ? null : (value) {
+        if (value == null || value.isEmpty) {
+          return widget.validateMessage;
+        }
+        return null;
+      }),
       obscureText: widget.isPassword ? isObscured : false,
       controller: widget.controller,
       decoration: InputDecoration(
