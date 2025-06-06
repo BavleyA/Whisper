@@ -10,31 +10,43 @@ class Layout extends StatefulWidget {
 
 class _LayoutState extends State<Layout> {
   int currentIndex = 0;
+  PageController pageController = PageController(
+    initialPage: 0,
+  );
   @override
   Widget build(BuildContext context) {
-    List<Widget> screens = [
-      Container(
-        color: Colors.red,
-      ),
-      Container(
-        color: Colors.white,
-      ),
-      Container(
-        color: Colors.black,
-      ),
-      Container(
-        color: Colors.yellow,
-      ),
-    ];
+
     return Scaffold(
       appBar: AppBar(),
-      body: screens[currentIndex],
+      body: PageView(
+        controller: pageController,
+        onPageChanged: (value) {
+          setState(() {
+            currentIndex = value;
+          });
+        },
+        children: [
+          Container(
+            color: Colors.red,
+          ),
+          Container(
+            color: Colors.white,
+          ),
+          Container(
+            color: Colors.black,
+          ),
+          Container(
+            color: Colors.yellow,
+          ),
+        ],
+      ),
       bottomNavigationBar: NavigationBar(
         elevation: 1,
           selectedIndex: currentIndex,
           onDestinationSelected: (index) {
           setState(() {
             currentIndex = index;
+            pageController.jumpToPage(index);
           });
           },
           destinations: [
