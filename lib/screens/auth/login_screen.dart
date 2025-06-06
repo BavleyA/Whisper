@@ -27,26 +27,68 @@ class _LoginScreenState extends State<LoginScreen> {
               Center(
                 child: AppLogo(),
               ),
-              SizedBox(height: 25),
+              const SizedBox(height: 25),
               Text("Welcome Back , ",
                   style: Theme.of(context).textTheme.headlineLarge
               ),
-              SizedBox(height: 5),
+              const SizedBox(height: 5),
               Text("Login To Start Your Whispers",
                   style: Theme.of(context).textTheme.bodyLarge
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               CustomTextField(
                 label: "Email",
                 iconData: Iconsax.direct,
               controller: emailController,),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
               CustomTextField(label: "Password",
                   iconData: Iconsax.password_check,
               controller: passwordController,
                 isPassword: true,
               ),
-
+              const SizedBox(height: 16,),
+              Row(
+                children: [
+                  const Spacer(),
+                  TextButton(
+                    onPressed: () {},
+                    child: const Text("Forgot Password?"),
+                  ),
+                ],
+              ),
+              const SizedBox(height: 10,),
+              ElevatedButton(
+                onPressed: () {},
+                child: Text("Login".toUpperCase(),
+                style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.bold,
+                ),),
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.deepPurple,
+                  padding: EdgeInsets.all(16.0),
+                  minimumSize: const Size(double.infinity,60),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+              ),
+              const SizedBox(height: 16,),
+              OutlinedButton(
+                onPressed: (){},
+                child: Text('create account'.toUpperCase(),
+                style: TextStyle(
+                  fontSize: 18,
+                ) ,
+                ),
+                style: OutlinedButton.styleFrom(
+                  padding: EdgeInsets.all(16.0),
+                  minimumSize: const Size(double.infinity,60),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                ),
+              ),
             ],
           ),
         ),
