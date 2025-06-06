@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:whisper_app/screens/auth/forget_password_screen.dart';
 import 'package:whisper_app/widgets/custom_text_field.dart';
 import 'package:whisper_app/widgets/logo.dart';
 
@@ -51,7 +52,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   const Spacer(),
                   TextButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(context,
+                          MaterialPageRoute(builder: (context) => ForgetPasswordScreen()));
+                    },
                     child: const Text("Forgot Password?"),
                   ),
                 ],
