@@ -4,6 +4,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:whisper_app/screens/auth/forget_password_screen.dart';
 import 'package:whisper_app/widgets/custom_text_field.dart';
 import 'package:whisper_app/widgets/logo.dart';
+import 'package:whisper_app/screens/auth/profile_setUp_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -79,7 +80,12 @@ class _LoginScreenState extends State<LoginScreen> {
               ),
               const SizedBox(height: 16,),
               OutlinedButton(
-                onPressed: (){},
+                onPressed: (){
+                  Navigator.pushAndRemoveUntil(context,
+                      MaterialPageRoute(builder: (context) => ProfileSetUpScreen()),
+                      (route) => false
+                  );
+                },
                 child: Text('create account'.toUpperCase(),
                 style: TextStyle(
                   fontSize: 18,
